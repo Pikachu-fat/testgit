@@ -27,4 +27,25 @@
         android:text="notifycode"
         android:textAllCaps="false" />
 
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/set_null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="set_null"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="show"
+        android:textAllCaps="false"/>
+
 </LinearLayout>

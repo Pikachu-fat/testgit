@@ -3,12 +3,15 @@ package com.wjq.client.client;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
     private Button bindKDXF;
+    TestBinder testBinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         final Button startServiceBtn = (Button) findViewById(R.id.startService);
 
 
+        testBinder = new TestBinder();
         final Intent intent = new Intent("com.wjq.service");
         startService(intent);
 
@@ -49,6 +53,32 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setAction("com.cmcc.tvclient.voicerecognition.call");
                 startService(intent);
+            }
+        });
+
+        findViewById(R.id.add).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: add");
+                testBinder.addListener();
+                Log.d(TAG, "testBinder: "+testBinder);
+            }
+        });
+
+        findViewById(R.id.set_null).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: set null");
+                testBinder = null;
+                Log.d(TAG, "testBinder: "+testBinder);
+            }
+        });
+
+        findViewById(R.id.show).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: show");
+                TestEntity.getInstance().notifyMsg();
             }
         });
     }
