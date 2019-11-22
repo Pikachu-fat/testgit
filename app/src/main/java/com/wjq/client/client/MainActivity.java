@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 for (int i =0;i<3;i++){
+                    // test git --amend
                     Intent intent = new Intent("com.wjq.service");
                     startService(intent);
                 }
