@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         final Button startServiceBtn = (Button) findViewById(R.id.startService);
 
 
+        //添加test log
         testBinder = new TestBinder();
         final Intent intent = new Intent("com.wjq.service");
         startService(intent);
