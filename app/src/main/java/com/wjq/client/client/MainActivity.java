@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         bindKDXF.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // v1.0
                 for (int i =0;i<3;i++){
                     Intent intent = new Intent("com.cmcc.tvclient.kdxfbindService");
                     startService(intent);
